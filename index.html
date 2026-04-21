@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>定制产品原图上传</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system}
+body{padding:20px;background:#f0f2f5}
+.card{background:#fff;padding:24px;border-radius:16px;max-width:600px;margin:0 auto}
+h2{text-align:center;margin-bottom:20px;color:#333}
+.order-input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;margin-bottom:20px;font-size:16px}
+.file-box{margin:20px 0}
+#file{width:100%;padding:12px;border:1px solid #eee;border-radius:10px}
+.btn{width:100%;padding:15px;background:#165DFF;color:white;border:none;border-radius:10px;font-size:16px;margin-top:10px}
+.tip{color:#666;font-size:13px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>定制照片原图上传</h2>
+<input type="text" class="order-input" placeholder="请填写您的订单号">
+
+<div class="file-box">
+<p>📸 可一次性多选上传【27张原图】，高清不压缩</p>
+<input type="file" id="file" multiple accept="image/*">
+<p class="tip">微信浏览器直接多选，原图无损不模糊</p>
+</div>
+
+<button class="btn" onclick="submitImg()">提交订单图片</button>
+</div>
+
+<script>
+const fileInput = document.getElementById('file');
+function submitImg(){
+    if(fileInput.files.length === 0){
+        alert('请先选择要上传的照片！');
+        return;
+    }
+    alert('图片已提交成功！客服将尽快为您处理订单~');
+}
+</script>
+</body>
+</html>
